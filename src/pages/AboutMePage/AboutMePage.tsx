@@ -1,14 +1,10 @@
-import { Button, Card,Image, ListGroup } from "react-bootstrap"
+import {  Card,Image, ListGroup } from "react-bootstrap"
 import Layout from "../../Layout/Layout"
-
-import { useNavigate } from "react-router-dom"
 
 
 const AboutMePage = () => {
-  const navigate = useNavigate()
   return (
-    <Layout>
-        <Button onClick={()=>navigate('/')} variant='dark' style={{marginBottom:'20px'}}>Go Home</Button>
+    <Layout button>
         <Card className="text-center">
             <Card.Header>kabdibereke@gmail.com</Card.Header>
             <Image style={{margin:'20px auto'}} width={100} height={100} roundedCircle src='https://avatars.githubusercontent.com/u/100946196?s=400&u=36a650485152977618a696bc2f15551cd15dfc8b&v=4'/>
@@ -28,7 +24,7 @@ const AboutMePage = () => {
                     <br/> В основном занимаюсь на Frontendmentor.io оттуда черпаю идеи.  
                 </Card.Title>
             </Card.Body>
-      </Card>
+        </Card>
     </Layout>
   )
 }
