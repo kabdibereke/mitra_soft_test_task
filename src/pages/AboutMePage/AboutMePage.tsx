@@ -23,7 +23,7 @@ const AboutMePage = () => {
                   <ListGroup.Item>Website: https://github.com/kabdibereke</ListGroup.Item>
                   <ListGroup.Item>City: Караганда</ListGroup.Item>
                 </ListGroup>
-                <Card.Title style={{margin:'20px 100px',lineHeight:'40px'}}>
+                <Card.Title style={{margin:'20px',lineHeight:'40px'}}>
                     Фронтендом занимаюсь уже 2 года, из них 3 месяца коммерческого  опыта. 
                     <br/> В основном занимаюсь на Frontendmentor.io оттуда черпаю идеи.  
                 </Card.Title>
