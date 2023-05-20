@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image'
-import {  ListGroup, Spinner } from 'react-bootstrap';
+import {  Alert, ListGroup, Spinner } from 'react-bootstrap';
 import { useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,8 +9,8 @@ import { getUserStart } from '../../redux/slice/userSlice';
 
 const UserItem = () => {
   const {pathname} =useLocation()
-  const user = useSelector((state: RootState) => state.user.user);
-  const loading = useSelector((state: RootState) => state.user.loading);
+  const {user,loading,error} = useSelector((state: RootState) => state.user);
+  
   const dispatch =useDispatch()
 
   useEffect(()=> {
@@ -19,7 +19,8 @@ const UserItem = () => {
   },[])
   return (
     <Card className="text-center">
-        {loading ?  <div style={{margin:'20px'}}><Spinner animation="border" /></div>: 
+        {loading  ?  <div style={{margin:'20px'}}><Spinner animation="border" /></div>: 
+          error ? <Alert  variant='danger'>Something went wrong...try later</Alert> :
           <>
             <Card.Header>{user?.email}</Card.Header>
             <Image style={{margin:'20px auto'}} width={100} height={100} roundedCircle src='https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=500'/>

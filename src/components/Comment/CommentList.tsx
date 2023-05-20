@@ -1,4 +1,4 @@
-import {  ListGroup, Spinner } from 'react-bootstrap'
+import {  Alert, ListGroup, Spinner } from 'react-bootstrap'
 import CommentItem from './CommentItem'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,8 +6,8 @@ import { RootState } from '../../redux/store';
 import { getCommentStart } from '../../redux/slice/commentSlice';
 
 const CommentList = ({showComments,id}:{showComments: boolean,id:number}) => {
-    const comments = useSelector((state: RootState) => state.comment.comment);
-    const loading = useSelector((state: RootState) => state.comment.loading);
+    const {comment,loading,error} = useSelector((state: RootState) => state.comment);
+
     const dispatch =useDispatch()
    
   
@@ -20,8 +20,10 @@ const CommentList = ({showComments,id}:{showComments: boolean,id:number}) => {
    },[showComments])
   return (
     <ListGroup as="ul" style={{marginTop:'10px'}}>
+       
        {loading ? <div style={{margin:'20px'}}><Spinner animation="border" /></div>:
-        comments.map(item=>{
+       error ? <Alert  variant='danger'>Something went wrong...try later</Alert> :
+        comment.map(item=>{
         return <CommentItem 
                 key={item.id} 
                 email={item.email} 
