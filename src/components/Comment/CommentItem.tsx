@@ -2,7 +2,7 @@ import { Badge, ListGroup } from 'react-bootstrap'
 import { IComment } from '../../interface/interface'
 
 
-const CommentItem = ({id,postId,email, body,name}:IComment) => {
+const CommentItem = ({email, body}:IComment) => {
   return (
     <ListGroup.Item as="li" >
       <Badge bg="dark">{email}</Badge>
