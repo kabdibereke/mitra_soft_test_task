@@ -1,8 +1,11 @@
 import { Badge, ListGroup } from 'react-bootstrap'
-import { IComment } from '../../interface/interface'
 
 
-const CommentItem = ({email, body}:IComment) => {
+interface ICommentItem {
+  email:string,
+  body:string
+}
+const CommentItem = ({email, body}:ICommentItem) => {
   return (
     <ListGroup.Item as="li" >
       <Badge bg="dark">{email}</Badge>

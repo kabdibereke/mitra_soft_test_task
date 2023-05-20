@@ -27,9 +27,6 @@ const CommentList = ({showComments,id}:{showComments: boolean,id:number}) => {
         return <CommentItem 
                 key={item.id} 
                 email={item.email} 
-                postId={item.postId} 
-                id={item.id} 
-                name={item.name} 
                 body={item.body}/>
        })
        }

@@ -5,7 +5,8 @@ import { getUserSuccess, getUserFailure } from "./slice/userSlice";
 import { fetchPosts, fetchComments, fetchUsers } from "../api";
 import { IComment, IPost, IUser } from "../interface/interface";
 
-function* getPostSaga(): Generator<any, void, IPost[]> {
+function* getPostSaga(action: { type: string }): Generator<any, void, IPost[]> {
+	console.log(action);
 	try {
 		yield delay(500);
 		const posts = yield call(fetchPosts);
