@@ -11,10 +11,13 @@ const AboutMePage = () => {
         <Button onClick={()=>navigate('/')} variant='dark' style={{marginBottom:'20px'}}>Go Home</Button>
         <Card className="text-center">
             <Card.Header>kabdibereke@gmail.com</Card.Header>
-            <Image style={{margin:'20px auto'}} width={100} height={100} roundedCircle src='https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=500'/>
+            <Image style={{margin:'20px auto'}} width={100} height={100} roundedCircle src='https://avatars.githubusercontent.com/u/100946196?s=400&u=36a650485152977618a696bc2f15551cd15dfc8b&v=4'/>
             <Card.Body>
                 <Card.Title>Name:
                   Кабди Береке
+                </Card.Title>
+                <Card.Title>Age:
+                  25 лет
                 </Card.Title>
                 <ListGroup style={{width:'fit-content',margin:'0 auto'}}>
                   <ListGroup.Item>Website: https://github.com/kabdibereke</ListGroup.Item>

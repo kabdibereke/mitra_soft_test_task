@@ -1,36 +1,38 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { IPost } from "../../interface/interface";
+
+import { useEffect } from "react";
+
 import PostItem from "./PostItem";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { getPostStart } from "../../redux/slice/postSlice";
+import { Spinner } from "react-bootstrap";
+
 
 
 const PostList = () => {
-    const [data, setData] = useState<IPost[]>([]);
+  const posts = useSelector((state: RootState) => state.post.post);
+  const loading = useSelector((state: RootState) => state.post.loading);
+  const dispatch =useDispatch()
+  useEffect(() => {
+    dispatch(getPostStart());
+  }, []);
 
-    useEffect(() => {
-      fetchData();
-    }, []);
-  
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-        setData(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
   return (
     <>
-    {data.map(item=>{
-            return <PostItem 
-                    key={item.id} 
-                    userId={item.userId} 
-                    id={item.id} 
-                    title={item.title} 
-                    body={item.body}/>
-        })}
+     {loading ?  <div style={{width:'100%', display:"flex", alignItems:'center', justifyContent:'center'}}><Spinner animation="border" /></div>:
+      posts.map(item=>{
+        return <PostItem 
+                key={item.id} 
+                userId={item.userId} 
+                id={item.id} 
+                title={item.title} 
+                body={item.body}/>
+        })
+     }
+ 
     </>
   )
 }
 
 export default PostList
+
