@@ -10,11 +10,10 @@ export const fetchPosts = async () => {
 
 export const fetchComments = async (id: number) => {
 	const response = await axios.get<IComment[]>(
-		`https://jsonplaceholder.typicode.com/comments`,
-		{
-			params: {
-				postId: id,
-			},
+		`https://jsonplaceholder.typicode.com/comments`, {
+		    params: {
+				postId:id
+		    }
 		},
 	);
 	return response.data;
