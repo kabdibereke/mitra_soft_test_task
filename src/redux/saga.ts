@@ -2,7 +2,7 @@ import { takeLatest, call, put, delay } from "redux-saga/effects";
 import { getPostSuccess, getPostFailure } from "./slice/postSlice";
 // import { getCommentSuccess, getCommentFailure } from "./slice/commentSlice";
 import { getUserSuccess, getUserFailure } from "./slice/userSlice";
-import { fetchPosts, fetchComments, fetchUsers } from "../api";
+import { fetchPosts, fetchUsers } from "../api";
 import { IComment, IPost, IUser } from "../interface/interface";
 
 function* getPostSaga(): Generator<any, void, IPost[]> {
