@@ -1,3 +1,3 @@
-Тестовое задание  https://hh.kz/applicant/vacancy_response?vacancyId=80725560&hhtmFrom=vacancy
+Тестовое задание  от МИТРА СОФТ 
 
-React(Vite), TS, RTK, Redux-saga
+React(Vite), TS, RTK, Redux-saga, React-Bootstrap
