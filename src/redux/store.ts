@@ -3,7 +3,7 @@ import createSagaMiddleware from "redux-saga";
 import rootSaga from "./saga";
 import postSlice from "./slice/postSlice";
 import userSlice from "./slice/userSlice";
-import commentSlice from "./slice/commentSlice";
+// import commentSlice from "./slice/commentSlice";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -11,7 +11,7 @@ const store = configureStore({
 	reducer: {
 		post: postSlice,
 		user: userSlice,
-		comment: commentSlice,
+		// comment: commentSlice,
 	},
 	middleware: [sagaMiddleware],
 });

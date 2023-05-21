@@ -8,16 +8,16 @@ export const fetchPosts = async () => {
 	return response.data;
 };
 
-export const fetchComments = async (id: number) => {
-	const response = await axios.get<IComment[]>(
-		`https://jsonplaceholder.typicode.com/comments`, {
-		    params: {
-				postId:id
-		    }
-		},
-	);
-	return response.data;
-};
+// export const fetchComments = async (id: number) => {
+// 	const response = await axios.get<IComment[]>(
+// 		`https://jsonplaceholder.typicode.com/comments`, {
+// 		    params: {
+// 				postId:id
+// 		    }
+// 		},
+// 	);
+// 	return response.data;
+// };
 
 export const fetchUsers = async (id: number) => {
 	const response = await axios.get<IUser[]>(
